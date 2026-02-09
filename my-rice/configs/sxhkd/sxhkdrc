@@ -1,0 +1,140 @@
+#  ╔══════════════════════════════════════════════════════════════════╗
+#  ║                        SXHKD Config                              ║
+#  ╚══════════════════════════════════════════════════════════════════╝
+
+# ─────────────────────────────────────────────────────────────────────
+# Applications
+# ─────────────────────────────────────────────────────────────────────
+
+# Terminal
+super + Return
+    alacritty
+
+# App launcher
+super + d
+    rofi -show drun
+
+# Run prompt
+super + r
+    rofi -show run
+
+# File browser (rofi)
+super + f
+    rofi -show filebrowser
+
+# Window switcher
+super + Tab
+    rofi -show window
+
+# File manager
+super + e
+    alacritty -e yazi
+
+# Browser
+super + b
+    firefox
+
+# Editor
+super + n
+    alacritty -e nvim
+
+# ─────────────────────────────────────────────────────────────────────
+# Rofi Menus
+# ─────────────────────────────────────────────────────────────────────
+
+# Powermenu
+super + p
+    ~/.config/rofi/scripts/powermenu.sh
+
+# Wallpaper selector
+super + w
+    ~/.config/rofi/scripts/wallpaper.sh
+
+# ─────────────────────────────────────────────────────────────────────
+# System
+# ─────────────────────────────────────────────────────────────────────
+
+# Lock screen
+super + x
+    i3lock -c 000000
+
+# Reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd; notify-send "sxhkd" "Config reloaded"
+
+# Reload bspwm
+super + shift + r
+    bspc wm -r
+
+# ─────────────────────────────────────────────────────────────────────
+# BSPWM Window Management
+# ─────────────────────────────────────────────────────────────────────
+
+# Close/Kill window
+super + {_,shift + }q
+    bspc node -{c,k}
+
+# Toggle fullscreen
+super + shift + f
+    bspc node -t ~fullscreen
+
+# Toggle floating
+super + shift + space
+    bspc node -t ~floating
+
+# Toggle monocle layout
+super + m
+    bspc desktop -l next
+
+# Focus/Swap window (vim keys)
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+
+# Switch/Move to workspace
+super + {_,shift + }{1-3}
+    bspc {desktop -f,node -d} '^{1-3}'
+
+# Resize windows
+super + alt + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Preselect direction
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# Cancel preselect
+super + ctrl + space
+    bspc node -p cancel
+
+# ─────────────────────────────────────────────────────────────────────
+# Media Keys
+# ─────────────────────────────────────────────────────────────────────
+
+# Volume
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Brightness
+XF86MonBrightnessUp
+    brightnessctl set +5%
+
+XF86MonBrightnessDown
+    brightnessctl set 5%-
+
+# ─────────────────────────────────────────────────────────────────────
+# Screenshots
+# ─────────────────────────────────────────────────────────────────────
+
+# Full screenshot
+Print
+    scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -e 'notify-send "Screenshot" "Saved: $f"'
+
+# Selection screenshot
+super + Print
+    scrot -s ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -e 'notify-send "Screenshot" "Saved: $f"'

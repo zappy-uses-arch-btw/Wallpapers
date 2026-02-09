@@ -1,0 +1,91 @@
+/*
+ * ╔══════════════════════════════════════════════════════════════════╗
+ * ║                   ROFI Wallpaper Selector Theme                  ║
+ * ╚══════════════════════════════════════════════════════════════════╝
+ */
+
+@import "colors.rasi"
+
+configuration {
+    show-icons: true;
+}
+
+window {
+    width: 800px;
+    transparency: "real";
+    background-color: @bg-transparent;
+    border: 2px solid;
+    border-color: @accent;
+    border-radius: 12px;
+    location: center;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+    padding: 16px;
+    spacing: 12px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    text-color: @fg;
+    border-radius: 8px;
+    padding: 12px 16px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent;
+    margin: 0 8px 0 0;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Select wallpaper...";
+    placeholder-color: @fg-dim;
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* GRID VIEW                                                           */
+/* ─────────────────────────────────────────────────────────────────── */
+
+listview {
+    background-color: transparent;
+    columns: 4;     /* Grid layout */
+    lines: 3;
+    spacing: 12px;
+    scrollbar: false;
+    flow: horizontal;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    padding: 10px;
+    border-radius: 8px;
+    orientation: vertical; /* Icon on top, text below */
+    spacing: 8px;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    horizontal-align: 0.5; /* Center text */
+    vertical-align: 0.5;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 150px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    border-radius: 8px;
+}

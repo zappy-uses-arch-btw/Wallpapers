@@ -1,0 +1,142 @@
+/*
+ * ╔══════════════════════════════════════════════════════════════════╗
+ * ║                     ROFI Config - Glass Theme                    ║
+ * ╚══════════════════════════════════════════════════════════════════╝
+ */
+
+@import "colors.rasi"
+
+configuration {
+    modi: "drun,run,filebrowser";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "Apps";
+    display-run: "Run";
+    display-filebrowser: "Files";
+    drun-display-format: "{name}";
+    scroll-method: 0;
+    disable-history: false;
+    sidebar-mode: false;
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* Main Window                                                         */
+/* ─────────────────────────────────────────────────────────────────── */
+
+window {
+    width: 500px;
+    transparency: "real";
+    background-color: @bg-transparent;
+    border: 2px solid;
+    border-color: @accent;
+    border-radius: 12px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ listview, mode-switcher, inputbar ];
+    padding: 16px;
+    spacing: 12px;
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* Search Bar (Bottom)                                                 */
+/* ─────────────────────────────────────────────────────────────────── */
+
+inputbar {
+    background-color: @bg-alt;
+    text-color: @fg;
+    border-radius: 8px;
+    padding: 12px 16px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent;
+    margin: 0 8px 0 0;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search...";
+    placeholder-color: @fg-dim;
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* Mode Switcher                                                       */
+/* ─────────────────────────────────────────────────────────────────── */
+
+mode-switcher {
+    background-color: transparent;
+    spacing: 8px;
+}
+
+button {
+    background-color: @bg-alt;
+    text-color: @fg-dim;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+button selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* App List (4 items visible, no scrollbar)                            */
+/* ─────────────────────────────────────────────────────────────────── */
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 4;
+    spacing: 4px;
+    scrollbar: false;
+    fixed-height: true;
+    border: 0px; /* Removes the "cursed line" separator */
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 28px;
+    margin: 0 12px 0 0;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/* Scrollbar (disabled)                                                */
+/* ─────────────────────────────────────────────────────────────────── */
+
+scrollbar {
+    enabled: false;
+}

@@ -1,0 +1,24 @@
+#  ╔══════════════════════════════════════════════════════════════════╗
+#  ║                       WALLUST v3 Config                          ║
+#  ╚══════════════════════════════════════════════════════════════════╝
+
+# Backend for color extraction
+#backend = "fast-resize"
+backend = "resized"
+color_space = "labmixed"
+threshold = 15
+check_contrast = true
+
+
+# ─────────────────────────────────────────────────────────────────────
+# Template Definitions
+# ─────────────────────────────────────────────────────────────────────
+
+[templates]
+bspwm = { template = 'bspwm.sh', target = '~/.config/bspwm/colors.sh' }
+polybar = { template = 'polybar.ini', target = '~/.config/polybar/colors.ini' }
+rofi = { template = 'rofi.rasi', target = '~/.config/rofi/colors.rasi' }
+tmux = { template = 'tmux.conf', target = '~/.config/tmux/colors.conf' }
+nvim = { template = 'nvim.lua', target = '~/.config/nvim/colors/wallust.lua' }
+dunst = { template = 'dunst.conf', target = '~/.config/dunst/colors.conf' }
+alacritty = { template = 'alacritty.toml', target = '~/.config/alacritty/colors.toml' }

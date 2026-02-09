@@ -1,0 +1,25 @@
+# Wallust Configuration
+
+# How the image is parsed: full, resized, wal, thumb, fastresize, kmeans
+backend = "resized"
+
+# Color space: lab, labmixed, lch, lchmixed, rgb, srgb
+color_space = "lab"
+
+# Palette: dark, dark16, harddark, harddark16, light, light16, softlight, softlight16
+palette = "dark"
+
+# Threshold in percent for color differences
+threshold = 15
+
+# Templates
+[templates]
+bspwm = { template = "bspwm.sh", target = "~/.config/bspwm/colors.sh" }
+polybar = { template = "polybar.ini", target = "~/.config/polybar/colors.ini" }
+rofi = { template = "rofi.rasi", target = "~/.config/rofi/colors.rasi" }
+tmux = { template = "tmux.conf", target = "~/.config/tmux/colors.conf" }
+nvim = { template = "nvim.lua", target = "~/.config/nvim/colors/wallust.lua" }
+dunst = { template = "dunst.conf", target = "~/.config/dunst/colors.conf" }
+alacritty = { template = "alacritty.toml", target = "~/.config/alacritty/colors.toml" }
+
+

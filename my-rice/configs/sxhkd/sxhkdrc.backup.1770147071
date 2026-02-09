@@ -1,0 +1,123 @@
+# Terminal
+super + Return
+    alacritty
+
+# Rofi launcher
+super + d
+    rofi -show drun
+
+# Window switcher
+super + Tab
+    rofi -show window
+
+# Browser
+super + b
+    firefox
+
+# File manager
+super + e
+    thunar
+
+# Yazi file manager
+super + shift + e
+    alacritty -e yazi
+
+# Neovim
+super + n
+    alacritty -e nvim
+
+# Reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Config reloaded'
+
+# Quit/restart bspwm
+super + shift + {q,r}
+    bspc {quit,wm -r}
+
+# Close/kill window
+super + {_,shift + }q
+    bspc node -{c,k}
+
+# Toggle fullscreen
+super + f
+    bspc node -t ~fullscreen
+
+# Toggle floating
+super + shift + space
+    bspc node -t ~floating
+
+# Toggle monocle layout
+super + m
+    bspc desktop -l next
+
+# Focus/swap nodes
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+
+# Focus/send to desktop
+super + {_,shift + }{1-6}
+    bspc {desktop -f,node -d} '^{1-6}'
+
+# Preselect direction
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# Cancel preselection
+super + ctrl + space
+    bspc node -p cancel
+
+# Expand window
+super + alt + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Contract window
+super + alt + shift + {h,j,k,l}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Move floating window
+super + ctrl + {Left,Down,Up,Right}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Volume control
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%; notify-send -t 1000 "Volume" "$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -1)%"
+
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%; notify-send -t 1000 "Volume" "$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -1)%"
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle; notify-send -t 1000 "Volume" "Toggled"
+
+# Brightness control
+XF86MonBrightnessUp
+    brightnessctl set +5%; notify-send -t 1000 "Brightness" "$(brightnessctl get)"
+
+XF86MonBrightnessDown
+    brightnessctl set 5%-; notify-send -t 1000 "Brightness" "$(brightnessctl get)"
+
+# Screenshot
+Print
+    scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -e 'notify-send "Screenshot saved" "$f"'
+
+super + Print
+    scrot -s ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png -e 'notify-send "Screenshot saved" "$f"'
+
+# Lock screen
+super + x
+    i3lock -c 000000
+
+# Change wallpaper with rofi menu
+super + w
+    wallpaper_selector
+
+# Change wallpaper with preview (nsxiv/sxiv)
+super + shift + w
+    wallpaper_selector_preview
+
+# Random wallpaper
+super + ctrl + w
+    change_wallpaper $(find ~/Pictures/Wallpapers -type f \( -iname "*.jpg" -o -iname "*.png" \) | shuf -n 1)
+
+# Power menu
+super + shift + p
+    echo -e "Shutdown\nReboot\nLogout" | rofi -dmenu -p "Power" | xargs -I {} sh -c 'case {} in Shutdown) systemctl poweroff;; Reboot) systemctl reboot;; Logout) bspc quit;; esac'

@@ -1,0 +1,65 @@
+╔═══════════════════════════════════════════════════════╗
+║            bspwm Keybinds Quick Reference             ║
+╚═══════════════════════════════════════════════════════╝
+
+APPLICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Super + Enter           Terminal (alacritty)
+Super + D               App launcher (rofi)
+Super + B               Browser (firefox)
+Super + E               File manager (thunar)
+Super + Shift + E       Yazi file manager (TUI)
+Super + N               Neovim
+
+WINDOW MANAGEMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Super + Q               Close window
+Super + Shift + Q       Kill window
+Super + F               Fullscreen
+Super + Shift + Space   Floating
+Super + M               Monocle layout
+
+NAVIGATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Super + H/J/K/L         Focus window (vim-like)
+Super + Shift + H/J/K/L Move window
+Super + 1-6             Switch workspace
+Super + Shift + 1-6     Send to workspace
+Super + Tab             Window switcher (rofi)
+
+WALLPAPER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Super + W               Wallpaper selector (list)
+Super + Shift + W       Wallpaper selector (preview)
+Super + Ctrl + W        Random wallpaper
+
+MEDIA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Volume Keys             Volume control + notification
+Brightness Keys         Brightness control + notification
+
+SCREENSHOTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Print                   Full screenshot
+Super + Print           Selection screenshot
+
+SYSTEM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Super + X               Lock screen
+Super + Shift + P       Power menu
+Super + Shift + R       Restart bspwm
+Super + Escape          Reload sxhkd
+
+NEOVIM KEYBINDS (Inside Neovim)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Space                   Leader key
+Space + w               Save file
+Space + q               Quit
+Space + e               File explorer
+Space + v               Vertical split
+Space + s               Horizontal split
+Space + h               Clear search highlight
+Tab                     Next buffer
+Shift + Tab             Previous buffer
+Space + x               Close buffer
+Ctrl + h/j/k/l          Navigate splits

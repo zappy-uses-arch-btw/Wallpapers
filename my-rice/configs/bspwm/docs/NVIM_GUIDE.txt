@@ -1,0 +1,84 @@
+╔═══════════════════════════════════════════════════════╗
+║              Neovim Quick Start Guide                 ║
+╚═══════════════════════════════════════════════════════╝
+
+BASICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Line numbers (absolute + relative)
+• Mouse support enabled
+• System clipboard integration
+• Auto-save on exit
+• Persistent undo history
+
+LEADER KEY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Leader = Space
+
+FILE OPERATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<Space>w    Save file
+<Space>q    Quit
+<Space>Q    Quit all without saving
+<Space>e    Open file explorer (netrw)
+
+WINDOW MANAGEMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<Space>v    Vertical split
+<Space>s    Horizontal split
+Ctrl+h      Move to left window
+Ctrl+j      Move to bottom window
+Ctrl+k      Move to top window
+Ctrl+l      Move to right window
+
+BUFFER NAVIGATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Tab         Next buffer
+Shift+Tab   Previous buffer
+<Space>x    Close buffer
+
+EDITING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<Space>h    Clear search highlight
+<Space>r    Search and replace
+<Space>z    Toggle line wrap
+<Space>sp   Toggle spell check
+
+VISUAL MODE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<           Indent left (stays in visual)
+>           Indent right (stays in visual)
+J           Move selected lines down
+K           Move selected lines up
+
+TERMINAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<Space>t    Open terminal
+Esc         Exit terminal mode
+
+FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Auto-highlight on yank
+✓ Auto-remove trailing whitespace
+✓ Auto-create parent directories
+✓ Built-in file explorer (netrw)
+✓ Dynamic colors from wallust
+✓ System clipboard integration
+
+TIPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Use 'y' to yank (copy) to system clipboard
+• Use 'p' to paste from system clipboard
+• Mouse works for selecting and scrolling
+• Files are auto-saved without swap files
+• Undo history persists across sessions
+• Colors match your wallpaper automatically!
+
+NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Want more features? Consider adding:
+• Telescope (fuzzy finder)
+• LSP (language server protocol)
+• Treesitter (better syntax highlighting)
+• nvim-cmp (autocompletion)
+
+Config location: ~/.config/nvim/init.lua

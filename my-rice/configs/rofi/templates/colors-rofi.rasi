@@ -1,0 +1,9 @@
+* {
+    background:     {{background}};
+    background-alt: {{color0}};
+    foreground:     {{foreground}};
+    foreground-dim: {{color8}};
+    accent:         {{color4}};
+    urgent:         {{color1}};
+    background-trans: {{background}}dd;
+}

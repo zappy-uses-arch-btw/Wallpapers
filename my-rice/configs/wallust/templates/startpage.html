@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startpage</title>
+    <style>
+        :root {
+            --bg: {{background}};
+            --fg: {{foreground}};
+            --accent: {{color4}};
+            --dim: {{color8}};
+            --card-bg: {{background}}E6; /* Transparent background */
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #clock {
+            font-size: 6rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--fg);
+            font-size: 1.5rem;
+            width: 150px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            background-color: var(--accent);
+            color: var(--bg);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="clock">00:00</div>
+
+    <div class="container">
+        <a href="https://youtube.com" class="card">
+            <span class="icon"></span>
+            <span>YouTube</span>
+        </a>
+        <a href="https://chatgpt.com" class="card">
+            <span class="icon">󰭹</span>
+            <span>ChatGPT</span>
+        </a>
+        <a href="https://github.com" class="card">
+            <span class="icon"></span>
+            <span>GitHub</span>
+        </a>
+        <a href="https://comix.to" class="card">
+            <span class="icon">󰔁</span>
+            <span>Comix</span>
+        </a>
+        <a href="https://manganato.gg" class="card">
+            <span class="icon">󰉺</span>
+            <span>Manga</span>
+        </a>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

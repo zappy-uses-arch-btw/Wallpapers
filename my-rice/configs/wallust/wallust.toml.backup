@@ -1,0 +1,41 @@
+backend = "resized"
+color_space = "lab"
+threshold = 15
+palette_size = 16
+check_contrast = true
+
+[[template]]
+template = "colors.sh"
+target = "/home/zappymc/.config/wallust/colors.sh"
+
+[[template]]
+template = "colors-bspwm.sh"
+target = "/home/zappymc/.config/bspwm/colors.sh"
+
+[[template]]
+template = "colors-polybat.ini"
+target = "/home/zappymc/.config/polybar/colors.ini"
+
+[[template]]
+template = "colors-rofi.rasi"
+target = "/home/zappymc/.config/rofi/colors.rasi"
+
+[[template]]
+template = "colors-dunst"
+target = "/home/zappymc/.config/dunst/dunstrc"
+
+[[template]]
+template = "colors-alacritty.toml"
+target = "/home/zappymc/.config/alacritty/colors.toml"
+
+[[template]]
+template = "colors-tmux.conf"
+target = "/home/zappymc/.config/tmux/colors.conf"
+
+[[template]]
+template = "colors-yazi.toml"
+target = "/home/zappymc/.config/yazi/theme.toml"
+
+[[template]]
+template = "colors-nvim.vim"
+target = "/home/zappymc/.config/nvim/colors/wallust.vim"
